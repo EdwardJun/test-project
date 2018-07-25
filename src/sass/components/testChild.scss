@@ -1,0 +1,11 @@
+@import "../sass/mixin.scss";
+
+.testChild-page {
+  .to-search-div {
+    margin: 0 auto;
+    width: px2rem(200px);
+    height: px2rem(50px);
+    background-color: #ccc;
+    border-radius: px2rem(5px);
+  }
+}
