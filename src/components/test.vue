@@ -16,6 +16,7 @@
       <div class="count-button" @click="doCreateCount()">+</div>
     </div>
     <div>{{test}}</div>
+    <div class="control-div"><input type="text" maxlength="6" v-model="controMoney" @input="doControlMoney()"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -31,6 +32,7 @@
         global: Global.data,
         // textValue: 0
         // textValue: this.$store.textValue
+        controMoney: ''
       }
     },
     mounted () {
@@ -44,17 +46,10 @@
       },
       test () {
         let that = this
-        let p1 = new Promise((resolve, reject) => {
-          setTimeout(() => reject(new Error('fail')), 3000)
+        that.testPromise().then(res => {
+          console.log(res)
         })
-        let p2 = new Promise((resolve, reject) => {
-          setTimeout(() => resolve(p1), 1000)
-        })
-        p2.then((result) => {
-          console.log(result)
-        }).catch((error) => {
-          console.log(error)
-        })
+        /* that.testPromise() */
       },
       textValue () {
         let that = this
@@ -97,8 +92,57 @@
       },
       timeout(ms) {
         return new Promise((resolve, reject) => {
-          setTimeout(resolve, ms, 'dome')
+          setTimeout(resolve, ms)
         })
+      },
+      testPromise () {
+        let that = this
+        let num = 5
+        return new Promise((resolve, reject) => {
+          that.timeout(1000).then(() => {
+            resolve(num)
+          })
+        })
+        /* new Promise((resolve, reject) => {
+          that.timeout(1000).then(() => {
+            resolve(num)
+          })
+        }).then(res => {
+          console.log(res)
+        }) */
+        /* new Promise((resolve, reject) => {
+          resolve(1);
+          console.log(2);
+        }).then(r => {
+          console.log(r);
+        }); */
+      },
+      doControlMoney () {
+        let that = this
+        let val = that.controMoney
+        if (val.length == 1) {
+          if (/\D/.test(val)) {
+            val = ''
+          }
+        } else {
+          val = val.replace(/[^\d.]/g, '') // 非数字 0-9 或 . 都替换为空字符串
+          let dotIndex = 0
+          val = val.replace(/\./g, function () {
+            if (dotIndex == 0) {
+                dotIndex = arguments[1]
+                return '.'
+            } else {
+                return ''
+            }
+          })
+          if (dotIndex > 0) {
+            val = val.substring(0, dotIndex + 3)
+          }
+        }
+        if (val) {
+          val = val.substr(0, 6)
+        }
+        that.controMoney = val
       }
     }
   }

@@ -73,4 +73,13 @@
       background: rgb(9, 84, 146);
     }
   }
+  .control-div {
+    >input {
+      width: px2rem(300px);
+      height: px2rem(70px);
+      border: 1px solid #666;
+      border-radius: px2rem(8px);
+      text-align: center;
+    }
+  }
 }

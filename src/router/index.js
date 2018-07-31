@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Global from '../libs/global'
+import Vuex from 'vuex'
+import store from '../store/index' // 直接引入的方式
 // import Club from '@/components/Club'
 
 Vue.use(Router)
+Vue.use(Vuex)
 let _global = Global.data
 /* export default new Router({
   routes: [
@@ -105,6 +108,18 @@ router.beforeEach((to, from, next) => {
   if(to.meta.title) {
     document.title = to.meta.title
   }
+  /**
+   * 有两种方式可以改变 currPage.name 的值
+   * a. 直接调用 currPage.name 更改
+   *      store.state.currPage.name = 'aaa'
+   * b. 调用vuex的commit函数，官网更推荐这种方式。
+   */
+  /* store.commit('setCurrPageName', to.name)
+  store.commit('setCurrPageQuery', to.query)
+  store.commit('setLastPageName', from.name)
+  store.commit('setLastPageQuery', from.query) */
+  store.commit('setCurrPageObj', to)
+  store.commit('setLastPageObj', from)
   return next()
 })
 
