@@ -21,7 +21,12 @@ export default {
     }
     return format
   },
-  parseDateFormat (longtime, type) { // 格式化Date.parse的时间类型
+  /**
+   *  格式化Date.parse的时间类型
+   * @param {*} longtime 
+   * @param {*} type 
+   */
+  parseDateFormat (longtime, type) {
     let d = new Date(longtime)
     let month = d.getMonth() + 1
     let day = d.getDate()
@@ -34,7 +39,11 @@ export default {
     let str = d.getFullYear() + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day)
     return type == 'long' ? (str + ' ' + hour + ':' + min + ':' + sec) : str
   },
-  stringToDate (str) { // 字符串YYYY-MM-DD hh:mm:ss 转日期Date类型
+  /**
+   * 字符串YYYY-MM-DD hh:mm:ss 转日期Date类型
+   * @param {*} str 
+   */
+  stringToDate (str) {
     if (!str) return
     let tArr = str.split(' ')
     let dateArr = tArr[0].split('-')
@@ -56,5 +65,35 @@ export default {
         }
     }
     return date
-  }
+  },
+  /**
+   * 控制文本框只能输入数字
+   * @param {*} num 输入的参数
+   */
+  controlNumber (num) {
+    let val = num
+    if (val.length == 1) {
+        if (/\D/.test(val)) {
+          val = ''
+        }
+    } else {
+        val = val.replace(/[^\d.]/g, '') // 非数字 0-9 或 . 都替换为空字符串
+        let dotIndex = 0
+        val = val.replace(/\./g, function () {
+            if (dotIndex == 0) {
+                dotIndex = arguments[1]
+                return '.'
+            } else {
+                return ''
+            }
+        })
+        if (dotIndex > 0) {
+            val = val.substring(0, dotIndex + 3)
+        }
+    }
+        if (val) {
+        val = val.substr(0, 6)
+        }
+        return val
+    }
 }

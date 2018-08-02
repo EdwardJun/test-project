@@ -32,7 +32,46 @@
         global: Global.data,
         // textValue: 0
         // textValue: this.$store.textValue
-        controMoney: ''
+        controMoney: '',
+        stickyList: [
+          {
+            titleName: 'A',
+            liText: [
+              'aaaaaa',
+              'aaaaaa',
+              'aaaaaa',
+              'aaaaaa',
+            ]
+          },
+          {
+            titleName: 'B',
+            liText: [
+              'bbbbbb',
+              'bbbbbb',
+              'bbbbbb',
+              'bbbbbb',
+            ]
+          },
+          {
+            titleName: 'C',
+            liText: [
+              'cccccc',
+              'cccccc',
+              'cccccc',
+              'cccccc',
+            ]
+          },
+          {
+            titleName: 'D',
+            liText: [
+              'dddddd',
+              'dddddd',
+              'dddddd',
+              'dddddd',
+            ]
+          }
+        ],
+        isAbsolute: false
       }
     },
     mounted () {
@@ -55,7 +94,6 @@
         let that = this
         return that.$store.state.textValue
       },
-
     },
     methods: {
       doDialogShow() {
@@ -119,30 +157,7 @@
       },
       doControlMoney () {
         let that = this
-        let val = that.controMoney
-        if (val.length == 1) {
-          if (/\D/.test(val)) {
-            val = ''
-          }
-        } else {
-          val = val.replace(/[^\d.]/g, '') // 非数字 0-9 或 . 都替换为空字符串
-          let dotIndex = 0
-          val = val.replace(/\./g, function () {
-            if (dotIndex == 0) {
-                dotIndex = arguments[1]
-                return '.'
-            } else {
-                return ''
-            }
-          })
-          if (dotIndex > 0) {
-            val = val.substring(0, dotIndex + 3)
-          }
-        }
-        if (val) {
-          val = val.substr(0, 6)
-        }
-        that.controMoney = val
+        that.controMoney = util.controlNumber(that.controMoney)
       }
     }
   }

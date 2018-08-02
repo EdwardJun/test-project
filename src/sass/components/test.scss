@@ -82,4 +82,45 @@
       text-align: center;
     }
   }
+  .test-sticky-div {
+    position: relative;
+    width: 100%;
+    height: px2rem(200px);
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    box-sizing: border-box;
+    >.item {
+      position: relative;
+      width: 100%;
+      >p {
+        /* position: -webkit-sticky;
+        position: sticky;
+        top: 0; */
+        width: 100%;
+        background-color: #666;
+        color: #ffffff;
+        &.sticky {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          left: 0;
+        }
+        &.absolute {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &.relative {
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        &.fixed {
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
 }

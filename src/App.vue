@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/8.png">
     <router-view/>
     <Spinner v-show="global.loading"></Spinner>
   </div>

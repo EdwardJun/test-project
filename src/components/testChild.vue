@@ -19,7 +19,6 @@
     mounted () {
       let that = this
       that.setLoadingHide()
-      console.log(that.$store.state.currPageObj)
     },
     methods: {
       doToSearchPage() {
