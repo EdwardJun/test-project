@@ -2,20 +2,23 @@
   <div id="app">
     <router-view/>
     <Spinner v-show="global.loading"></Spinner>
+    <tool-tip :tip-mes="tipMes"></tool-tip>
   </div>
 </template>
 
 <script>
 import Global from './libs/global'
 import Spinner from './components/spinner'
+import toolTip from './components/toolTip'
 export default {
   data () {
     return {
-      global: Global.data
+      global: Global.data,
+      tipMes: 'Hello'
     }
   },
   components: {
-    Spinner
+    Spinner,toolTip
   },
   created () {
     let g = Global

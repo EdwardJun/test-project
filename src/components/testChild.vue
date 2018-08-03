@@ -4,6 +4,7 @@
     <!-- <router-link :to="{path: '/test/search'}" tag="div" class="to-search-div">搜索页</router-link> -->
     <div class="to-search-div" @click="doToSearchPage()">搜索页</div>
     <div>{{this.$store.state.textValue}}</div>
+    <div><button @click="doClick()">22222</button></div>
   </div>
 </template>
 <script>
@@ -30,6 +31,10 @@
         setTimeout(() => {
           that.global.loading = false
         },500)
+      },
+      doClick () {
+        let that = this
+        that.$store.commit('setToolTipStatus', true)
       }
     }
   }
