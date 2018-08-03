@@ -102,7 +102,7 @@
         let that = this
         setTimeout(() => {
           that.global.loading = false
-        },50)
+        },500)
       },
       /**
        * top 值会被循环替换，只需要判断最新一次符合条件的就可以
