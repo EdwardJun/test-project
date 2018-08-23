@@ -74,6 +74,10 @@
         isAbsolute: false
       }
     },
+    created () {
+      let that = this
+      // that.setLoadingHide()
+    },
     mounted () {
       let that = this
       that.setLoadingHide()
@@ -108,6 +112,7 @@
         e.stopPropagation()
       },
       setLoadingHide() {
+        console.log('---修改false')
         let that = this
         setTimeout(() => {
           that.global.loading = false

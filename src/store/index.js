@@ -13,7 +13,9 @@ export default new Vuex.Store({
       name: '', query: null
     }, */
     currPageObj: null, // 当前页面对象
-    lastPageObj: null // 上一个页面对象
+    lastPageObj: null, // 上一个页面对象
+    toolTipActive: false, // 提示框状态
+    toolTipTextActive: false // 提示文本框的状态
   },
   getters: {
     getCurrPageName (state) {
@@ -45,6 +47,14 @@ export default new Vuex.Store({
     setLastPageObj (state, obj) {
       state.currPageObj = obj
     },
+    setToolTipStatus (state, status) {
+      state.toolTipActive = status
+      state.toolTipTextActive = status
+      setTimeout(() => {
+        state.toolTipActive = false
+        state.toolTipTextActive = false
+      }, 2000)
+    }
   },
   actions: {
 

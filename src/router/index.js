@@ -104,6 +104,7 @@ let router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  console.log('进入test')
   _global.loading = true
   if(to.meta.title) {
     document.title = to.meta.title
