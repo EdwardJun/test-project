@@ -76,11 +76,11 @@
     },
     created () {
       let that = this
-      that.setLoadingHide()
+      // that.setLoadingHide()
     },
     mounted () {
       let that = this
-      // that.setLoadingHide()
+      that.setLoadingHide()
       // that.httpTest()
     },
     computed: {

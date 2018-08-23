@@ -7,6 +7,8 @@ import router from './router'
 import VueResource from 'vue-resource'
 import AwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+/* import MiniRefreshTools from 'minirefresh';
+import 'minirefresh/dist/debug/minirefresh.css' */
 
 Vue.use(AwesomeSwiper)
 Vue.use(VueResource)
