@@ -96,6 +96,22 @@ let pageRouterOption = [
     component (resolve) {
       require(['../components/home.vue'], resolve)
     }
+  },
+  {
+    path: '/inputTest',
+    name: 'inputTest',
+    meta: {title: 'inputTest'},
+    component (resolve) {
+      require(['../components/inputTest.vue'], resolve)
+    }
+  },
+  {
+    path: '/callBack',
+    name: 'callBack',
+    meta: {title: 'callBack'},
+    component (resolve) {
+      require(['../components/callBack.vue'], resolve)
+    }
   }
 ]
 

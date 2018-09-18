@@ -24,8 +24,9 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    // host: 'localhost', // can be overwritten by process.env.HOST
+    host: '0.0.0.0',
+    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     // 是否自动打开浏览器
     autoOpenBrowser: false,
     errorOverlay: true,

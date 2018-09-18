@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       global: Global.data,
-      tipMes: 'Hello'
+      tipMes: '支付成功'
     }
   },
   components: {

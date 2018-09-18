@@ -1,4 +1,6 @@
 import Vue from 'vue'
+const wx = require('weixin-js-sdk')
+const win = window
 
 export default {
   data: {

@@ -11,7 +11,7 @@
     <div ref="wrapper" id="home">
       <div class="test-sticky-div">
         <div class="item" v-for="(stickyItem, stickyIndex) in stickyList" :key="stickyIndex">
-          <p :class="isActive==stickyIndex?'fixed':'relative'" ref="stickyP">{{stickyItem.titleName}}</p>
+          <p :class="isActive==stickyIndex?'fixed':'relative'" ref="stickyP" @click="toInputTestPage()">{{stickyItem.titleName}}</p>
           <ul ref="textUl">
             <li v-for="(textItem, textIndex) in stickyItem.liText" :key="textIndex">{{textItem}}</li>
           </ul>
@@ -185,13 +185,18 @@
           let wrapper = that.$refs.wrapper
           if (wrapper) {
             that.scroll = new BScroll(wrapper, {
-              scrollY: true
+              scrollY: true,
+              click: true
             })
           }
           /* this.scroll.on('beforeScrollStart', (pos) => {
             console.log(11111111122)
           }) */
         })
+      },
+      toInputTestPage () {
+        let that = this
+        that.$router.push({path: '/inputTest'})
       }
     }
   }
