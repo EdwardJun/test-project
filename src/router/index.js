@@ -67,7 +67,7 @@ let pageRouterOption = [
         name: 'testChild',
         meta: {title: '测试子页面'},
         component (resolve) {
-          require(['../components/testChild.vue'], resolve)
+          require(['../page/testChild.vue'], resolve)
         },
       },
       {
@@ -75,7 +75,7 @@ let pageRouterOption = [
         name: 'testSearch',
         meta: {title: '测试子搜索页面'},
         component (resolve) {
-          require(['../components/testSearch.vue'], resolve)
+          require(['../page/testSearch.vue'], resolve)
         },
       }
     ]
@@ -94,7 +94,7 @@ let pageRouterOption = [
     name: 'home',
     meta: {title: 'home'},
     component (resolve) {
-      require(['../components/home.vue'], resolve)
+      require(['../page/home.vue'], resolve)
     }
   },
   {
@@ -102,7 +102,7 @@ let pageRouterOption = [
     name: 'inputTest',
     meta: {title: 'inputTest'},
     component (resolve) {
-      require(['../components/inputTest.vue'], resolve)
+      require(['../page/inputTest.vue'], resolve)
     }
   },
   {
@@ -110,7 +110,7 @@ let pageRouterOption = [
     name: 'callBack',
     meta: {title: 'callBack'},
     component (resolve) {
-      require(['../components/callBack.vue'], resolve)
+      require(['../page/callBack.vue'], resolve)
     }
   }
 ]

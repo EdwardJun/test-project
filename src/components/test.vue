@@ -32,46 +32,7 @@
         global: Global.data,
         // textValue: 0
         // textValue: this.$store.textValue
-        controMoney: '',
-        stickyList: [
-          {
-            titleName: 'A',
-            liText: [
-              'aaaaaa',
-              'aaaaaa',
-              'aaaaaa',
-              'aaaaaa',
-            ]
-          },
-          {
-            titleName: 'B',
-            liText: [
-              'bbbbbb',
-              'bbbbbb',
-              'bbbbbb',
-              'bbbbbb',
-            ]
-          },
-          {
-            titleName: 'C',
-            liText: [
-              'cccccc',
-              'cccccc',
-              'cccccc',
-              'cccccc',
-            ]
-          },
-          {
-            titleName: 'D',
-            liText: [
-              'dddddd',
-              'dddddd',
-              'dddddd',
-              'dddddd',
-            ]
-          }
-        ],
-        isAbsolute: false
+        controMoney: ''
       }
     },
     created () {

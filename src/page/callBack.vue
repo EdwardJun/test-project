@@ -6,7 +6,6 @@
 <script>
   import util from '../libs/util.js'
   import Global from '../libs/global'
-  import inputComponent from './inputComponent.vue'
   export default {
     name: 'callBack',
     data () {

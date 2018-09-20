@@ -7,7 +7,7 @@
 <script>
   import util from '../libs/util.js'
   import Global from '../libs/global'
-  import inputComponent from './inputComponent.vue'
+  import inputComponent from '../components/inputComponent.vue'
   export default {
     name: 'inputTest',
     data () {

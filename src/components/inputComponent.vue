@@ -4,7 +4,6 @@
       <div class="number-wrap">
         <span class="num" :class="{active: numActiveIndex==numIndex}" v-for="(numItem, numIndex) in numArray" :key="numIndex">
           <i :class="{dot: !numItem.isSee && numItem.num}">{{numItem.isSee?numItem.num: ''}}</i>
-          <!-- <i class="dot"></i> -->
         </span>
       </div>
       <input ref="inputCon" v-model="inputValue" class="input-con" type="number" :maxlength="maxlength" @focus="doInputFocus($event)" @input="doEnterNum($event)">
@@ -51,8 +50,8 @@
           }
         ],
         numActiveIndex: 0, // 聚焦输入框的下标
-        modelInputValue: '',
-        isSee: true // 是否明文显示
+        isSee: true, // 是否明文显示
+        numLength: 0 // 已输入的字符串长度
       }
     },
     mounted () {
@@ -61,6 +60,30 @@
       that.$nextTick(() => {
         that.$refs.inputCon.focus()
       })
+    },
+    watch: {
+      inputValue (newValue, oldValue) {
+        let that = this
+        let timeId = ''
+        let newLength = newValue.substring(0,that.maxlength).split('').length
+        let oldLength = oldValue.substring(0,that.maxlength).split('').length
+        console.log(newLength)
+        console.log(oldLength)
+        if (newLength > oldLength) {
+          for (let i = 0; i < this.numLength - 1; i++) {
+            console.log('333333333333----------')
+            Vue.set(this.numArray[i], 'isSee', false)
+          }
+          timeId = setTimeout(() => {
+            if (this.numLength - 1 >= 0) {
+              console.log('222----------')
+              Vue.set(this.numArray[this.numLength - 1], 'isSee', false)
+            }
+          }, 1000)
+        }
+        console.log(this.numArray)
+        console.log('改变完')
+      }
     },
     methods: {
       setLoadingHide () {
@@ -77,46 +100,45 @@
         let inputArray = []
         let originInputArray = ['', '', '', '', '', '']
         
-        // let originInputArray = new Array(that.maxlength)
-        // console.log(originInputArray)
-        // console.log(e.target.value)
-        // console.log(e.data)
         that.inputValue = that.inputValue.substring(0,that.maxlength)
-        // console.log(that.inputValue.split("").length)
         inputArray = that.inputValue.split("")
-        let numLength = inputArray.length
-        let clearIndex = numLength - 1
-        that.numActiveIndex = numLength
-
-        /* if (clearIndex > 0) {
-          Vue.set(that.numArray[clearIndex], 'isSee', false)
-        } */
-
-        inputArray.map((item, index) => {
+        that.numLength = inputArray.length
+        that.numActiveIndex = that.numLength
+        console.log(inputArray)
+        /* inputArray.map((item, index) => {
           Vue.set(originInputArray, index, item)
         })
         
         originInputArray.map((item, index) => {
-          // Vue.set(that.numArray, index, item)
           that.numArray.map((numItem, numIndex) => {
             if (index == numIndex) {
               Vue.set(that.numArray[index], 'num', item)
             }
           })
-          
-          // Vue.set(that.numArray, 'num', item)
         })
-        Vue.set(that.numArray[numLength], 'isSee', true)
-        console.log(that.numArray)
-        console.log('-----------------------------')
-        let timeId = setTimeout(() => {
-          for (let i = 0; i < numLength; i++) {
-            Vue.set(that.numArray[i], 'isSee', false)
-          }
-        }, 2000)
+        console.log(that.numArray) */
+        that.numArray.map((numItem, numIndex) => {
+          numItem.num = ''
+        })
+        inputArray.map((item, index) => {
+          Vue.set(that.numArray[index], 'num', item)
+        })
+        console.log('shuchu----------')
         console.log(that.numArray)
 
-        if (numLength == 6) {
+        if (that.numLength != that.maxlength) {
+          Vue.set(that.numArray[that.numLength], 'isSee', true)
+        }
+        // console.log(that.numArray)
+        // console.log('-----------------------------')
+        /* let timeId = setTimeout(() => {
+          for (let i = 0; i < that.numLength - 1; i++) {
+            Vue.set(that.numArray[i], 'isSee', false)
+          }
+        }, 1000) */
+        // console.log(that.numArray)
+
+        if (that.numLength == 6) {
           that.$store.commit('setToolTipStatus', true)
         }
       }
