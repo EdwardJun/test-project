@@ -1,18 +1,21 @@
 <template>
   <div class="Home-page">
-    <inputComponent></inputComponent>
+    <input-component :maxlength="inputMaxlength" :isSee="inputIsSee" @inputValue="doReceiveValue"></input-component>
     <router-link to="/callBack" tag="button">回调方法页</router-link>
   </div>
 </template>
 <script>
   import util from '../libs/util.js'
   import Global from '../libs/global'
-  import inputComponent from '../components/inputComponent.vue'
+  import inputComponent from 'vue-password-border'
+  /* import inputComponent from '../components/inputComponent.vue' */
   export default {
     name: 'inputTest',
     data () {
       return {
-        global: Global.data
+        global: Global.data,
+        inputMaxlength: 6,
+        inputIsSee: false,
       }
     },
     components: {
@@ -28,6 +31,9 @@
         setTimeout(() => {
           that.global.loading = false
         },500)
+      },
+      doReceiveValue (value) {
+        console.log(value)
       }
     }
   }
