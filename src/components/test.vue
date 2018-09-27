@@ -73,7 +73,6 @@
         e.stopPropagation()
       },
       setLoadingHide() {
-        console.log('---修改false')
         let that = this
         setTimeout(() => {
           that.global.loading = false

@@ -324,3 +324,25 @@ display: inline-block;
   -ms-border-radius: $num;
   border-radius: $num;
 }
+
+@mixin borderHalf ($color) {
+  content: ' ';
+  display: inline-block;
+  width: 200%;
+  height: 200%;
+  border: 1px solid $color;
+  box-sizing: border-box;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+}
+
+@mixin lineHalf ($color) {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: $color;
+  transform:scaleY(.5);
+}

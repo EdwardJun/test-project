@@ -1,6 +1,10 @@
 <template>
   <div class="callBack-page">
     <button @click="doClick()">回调</button>
+    <div class="border">
+      <div class="border-con"></div>
+      <div class="line"></div>
+    </div>
   </div>
 </template>
 <script>
@@ -46,4 +50,5 @@
   }
 </script>
 <style lang="sass">
+@import "../sass/page/callBack.scss"
 </style>

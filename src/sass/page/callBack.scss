@@ -1,0 +1,26 @@
+@import "../sass/mixin.scss";
+
+.callBack-page {
+  width: 100%;
+  .border {
+    width: px2rem(500px);
+    height: px2rem(500px);
+    border: 1px solid #ccc;
+    .border-con {
+      position: relative;
+      margin: px2rem(20px) auto;
+      width: px2rem(100px);
+      height: px2rem(100px);
+      &::before {
+        @include borderHalf(red);
+      }
+    }
+    .line {
+      position: relative;
+      width: 100%;
+      &::after {
+        @include lineHalf(#ccc);
+      }
+    }
+  }
+}
