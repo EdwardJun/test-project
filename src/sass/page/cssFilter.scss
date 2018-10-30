@@ -1,0 +1,37 @@
+@import "../sass/mixin.scss";
+
+.cssFilter-page {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  .img {
+    position: relative;
+    margin-top: px2rem(100px);
+    width: px2rem(200px);
+    height: px2rem(200px);
+    border-radius: 50%;
+    @include img('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505822443&di=941986df9c6514d5d43eaba4aa938347&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.qqtouxiang8.net%2Fuploads%2Fallimg%2Fc150313%2F142623130563050-922006.jpg', px2rem(200px) px2rem(200px));
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 1%;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: 50%;
+      transform: scale(.95);
+      filter: blur(5px) brightness(80%) opacity(.7);
+      z-index: -1;
+    }
+  }
+  /* .img:hover {
+    transition: filter .3s;
+    filter: brightness(1.1) contrast(110%);
+  } */
+  .inputTest {
+    width: px2rem(300px);
+    height: px2rem(50px);
+    border: 1px solid #ccc;
+  }
+}

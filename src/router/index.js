@@ -112,6 +112,22 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/callBack.vue'], resolve)
     }
+  },
+  {
+    path: '/slideTest',
+    name: 'slideTest',
+    meta: {title: 'slideTest'},
+    component (resolve) {
+      require(['../page/slideTest.vue'], resolve)
+    }
+  },
+  {
+    path: '/cssFilter',
+    name: 'cssFilter',
+    meta: {title: 'cssFilter'},
+    component (resolve) {
+      require(['../page/cssFilter.vue'], resolve)
+    }
   }
 ]
 

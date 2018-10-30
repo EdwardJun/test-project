@@ -5,6 +5,8 @@
       <div class="border-con"></div>
       <div class="line"></div>
     </div>
+    <router-link to="/slideTest" tag="button">slideTest</router-link>
+    <button @click="doAsync()">async</button>
   </div>
 </template>
 <script>
@@ -45,6 +47,29 @@
       },
       callBackB (b) {
         console.log(`回调啦--------${b}`)
+      },
+      f () {
+        return new Promise((resolve,reject) => {
+          resolve(1)
+        })
+      },
+      async asyncPrint(value, ms) {
+        await this.timeout(ms);
+        console.log(value);
+      },
+      async doAsync () {
+        // const value = await this.f()
+        console.log(await this.f())
+        /* this.f().then((v) => {
+          console.log(v)
+        }) */
+        /* value.then(v => {
+          console.log(v)
+        }) */
+        
+        /* this.f().then(a => {
+          console.log(a)
+        }) */
       }
     }
   }
