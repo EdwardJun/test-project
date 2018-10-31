@@ -13,9 +13,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // friendly-errors-webpack-plugin用于更友好地输出webpack的警告、错误等信息
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+// const setIterm2Badge = require('set-iterm2-badge');
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
+
+/* const currentStr = '8081'
+setIterm2Badge(currentStr) */
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
