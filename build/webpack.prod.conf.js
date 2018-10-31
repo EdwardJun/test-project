@@ -12,6 +12,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // optimize-css-assets-webpack-plugin，用于优化和最小化css资源
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const WebpackDeepScopeAnalysisPlugin = require('webpack-deep-scope-plugin')
+// const glob = require('glob');
+// const PurifyCSSPlugin = require('purifycss-webpack');
 
 const env = require('../config/prod.env')
 
@@ -32,7 +35,12 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    // new WebpackDeepScopeAnalysisPlugin(),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
+    /* new PurifyCSSPlugin({
+      // Give paths to parse for rules. These should be absolute! 
+      paths: glob.sync(path.join(__dirname, './src/*.html')),
+    }), */
     new webpack.DefinePlugin({
       'process.env': env
     }),

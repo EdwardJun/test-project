@@ -1,6 +1,6 @@
 <template>
   <div class="Home-page">
-    <input-component :maxlength="inputMaxlength" :isSee="inputIsSee" @inputValue="doReceiveValue"></input-component>
+    <input-component :maxlength="inputMaxlength" :isSee="inputIsSee" @inputValue="doReceiveValue" @click.native="doInput()"></input-component>
     <router-link to="/callBack" tag="button">回调方法页</router-link>
   </div>
 </template>
@@ -34,6 +34,9 @@
       },
       doReceiveValue (value) {
         console.log(value)
+      },
+      doInput () {
+        console.log('111111')
       }
     }
   }

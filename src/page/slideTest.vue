@@ -34,9 +34,9 @@
           }
         },
         clubList: [
-          'http://192.168.1.103:8489/s/group00/M00/01/79/oIYBAFusin2ANHwUAAEZZQs2rGw860.png?st=dGyhxVmygMhw8SgK57YRGQ&e=1540628102',
+          'http://sdcm168.stonebean.com:8489/s/group00/M00/0D/77/oIYBAFrMZEKAYQhOACL6iUIbvs8269.png?st=gvAaq2P0nMS5gmEEPuR-_Q&e=1543030034',
           'http://sdcm170.stonebean.com:8489/s/group00/M00/04/02/oYYBAFeXQ-WAW9FsAACYzzrQjj4522.jpg?st=N3YO7J-tNFD5Zy-lMk9R6Q&e=1539744191',
-          'http://sdcm171.stonebean.com:8489/s/group00/M00/0D/17/oYYBAFrMY_qAJejsAAHnu7B5rhs99.jpeg?st=f0sA8WsDpy1d9UN2YRUqhw&e=1539744191'
+          'http://sdcm170.stonebean.com:8489/s/group00/M00/0D/17/oYYBAFrMZCWAPBUNAACYMOPMmNI77.jpeg?st=9-uTzQ9hsqoJPcWbxtmxwQ&e=1543030034'
         ]
       }
     },
