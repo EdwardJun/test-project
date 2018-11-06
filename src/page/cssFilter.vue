@@ -4,6 +4,11 @@
     <input type="text" ref="inputTest" class="inputTest" value="hahaha" @mouseover="inputOver" @keyup.enter="keyDownTest()">
     <router-link tag="button" :to="{name: 'slideTest'}">跳转slideTest</router-link>
     <button @click="doClickBtn()">点击改变isSave状态</button>
+    <div class="test-wrap">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
   </div>
 </template>
 <script>
@@ -37,6 +42,7 @@
           window.history.pushState(null, null, document.URL)
         });
       } */
+      that.arrayIncludes()
     },
     methods: {
       setLoadingHide () {
@@ -75,6 +81,27 @@
         // this.$router.replace({path: '/'});
         //replace替换原路由，作用是避免回退死循环
         // window.history.pushState(null, null, document.URL)
+      },
+      arrayIncludes () {
+        let that = this
+        /* let numList = [123, 456, 789, 111]
+        if (numList.includes(123)) {
+          console.log(numList.includes(123))
+        } */
+        /* let numObj = {
+          one: [1, 11, 111],
+          two: [2, 22, 222],
+          three: [3, 33, 333]
+        }
+        numObj['one'] = [123, 123]
+        console.log(numObj['one']) */
+        /* let numMap = new Map()
+        numMap.set('one', [111, 111])
+        numMap.set('two', [222, 222])
+        console.log(numMap.keys())
+        for (let map of numMap.keys()) {
+          console.log(map)
+        } */
       }
     }
   }

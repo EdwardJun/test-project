@@ -34,4 +34,16 @@
     height: px2rem(50px);
     border: 1px solid #ccc;
   }
+  .test-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    >div {
+      flex: 0 0 px2rem(300px);
+      width: px2rem(300px);
+      height: px2rem(300px);
+      border: 1px solid red;
+    }
+  }
 }
