@@ -9,6 +9,7 @@
       <div>2</div>
       <div>3</div>
     </div>
+    <router-link to="/vant" tag="button">跳转vant</router-link>
   </div>
 </template>
 <script>
