@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "analyz": "cross-env NODR_ENV=production npm_config_report=true npm run build"
   },
   "dependencies": {
     "vant": "^1.4.2",
@@ -31,6 +32,7 @@
     "better-scroll": "^1.12.6",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.0",
     "cssnano": "^3.10.0",
     "cssnano-preset-advanced": "^4.0.0-rc.2",
@@ -67,7 +69,7 @@
     "vue-template-compiler": "^2.5.2",
     "vuex": "^3.0.1",
     "webpack": "^3.6.0",
-    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-deep-scope-plugin": "^1.6.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0",
