@@ -128,6 +128,14 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/cssFilter.vue'], resolve)
     }
+  },
+  {
+    path: '/vant',
+    name: 'vant',
+    meta: {title: 'vant'},
+    component (resolve) {
+      require(['../page/vant.vue'], resolve)
+    }
   }
 ]
 
