@@ -15,7 +15,10 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // const WebpackDeepScopeAnalysisPlugin = require('webpack-deep-scope-plugin')
 // const glob = require('glob');
 // const PurifyCSSPlugin = require('purifycss-webpack');
+// const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
+// const smp = new SpeedMeasurePlugin();
 const env = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -135,7 +138,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new WebpackBuildNotifierPlugin({
+      title: "My Project Webpack Build",
+      // logo: path.resolve("./img/favicon.png"),
+      suppressSuccess: true
+    })
   ]
 })
 
