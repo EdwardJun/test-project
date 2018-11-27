@@ -136,6 +136,14 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/vant.vue'], resolve)
     }
+  },
+  {
+    path: '/cssLayout',
+    name: 'cssLayout',
+    meta: {title: 'cssLayout'},
+    component (resolve) {
+      require(['../page/cssLayout.vue'], resolve)
+    }
   }
 ]
 

@@ -35,6 +35,15 @@
         controMoney: ''
       }
     },
+    watch: {
+      /* '$route': {
+        handler: 'setLoadingHide',
+        immediate: true
+      } */
+      '$route' (to, from) {
+        this.setLoadingHide()
+      }
+    },
     created () {
       let that = this
       // that.setLoadingHide()

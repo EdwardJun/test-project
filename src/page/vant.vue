@@ -1,6 +1,7 @@
 <template>
   <div class="vant-page">
     <van-button type="primary" @click="doShowPopBottom()">主要按钮</van-button>
+    <van-button type="primary" @click="toCssLayout()">去布局页</van-button>
     <van-notice-bar text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。" left-icon="" />
     <van-popup v-model="isPopUpShow" position="right" :overlay="true" :close-on-click-overlay="true">内容</van-popup>
     <van-tabs v-model="tabActive" :swipeable="true" sticky>
@@ -183,6 +184,14 @@
           }
         });
         return imageInstance
+      },
+      toCssLayout () {
+        let that = this
+        let prefixPathname = location.href.split('#')[0]
+        // that.$router.push({name: 'cssLayout', query: {name: 'vant', obj: 'button'}})
+        console.log(location)
+        console.log(prefixPathname + '#/' + 'cssLayout' + '?name=vant&obj=button&callback=callBackTest')
+        location.href = prefixPathname + '#/' + 'cssLayout' + '?name=vant&obj=button&callback=callBackTest()'
       }
     }
   }

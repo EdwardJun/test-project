@@ -1,0 +1,35 @@
+@import "../sass/mixin.scss";
+
+html,body {
+  height: 100%;//高度一层层继承下来
+}
+.cssLayout-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  #wrap {
+    min-height: 100%;
+    background: pink;
+    text-align: center;
+    overflow: hidden;
+    p {
+      color: greenyellow;
+    }
+    .tmpl {
+      display: flex;
+      span {
+        flex: 1;
+      }
+    }
+  }
+  #wrap .main {
+    padding-bottom: 50px;
+  }
+  #footer {
+    height: 50px;
+    line-height: 50px;
+    background: deeppink;
+    text-align: center;
+    margin-top: -50px;
+  }
+}

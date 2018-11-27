@@ -7,11 +7,15 @@ import router from './router'
 import VueResource from 'vue-resource'
 import AwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import {default as filter} from './filter/filter.js'
 /* import MiniRefreshTools from 'minirefresh';
 import 'minirefresh/dist/debug/minirefresh.css' */
 
 Vue.use(AwesomeSwiper)
 Vue.use(VueResource)
+Object.keys(filter).forEach(key => {
+    Vue.filter(key, filter[key])
+})
 Vue.config.productionTip = false
 
 Vue.http.interceptors.push((request, next) => {
