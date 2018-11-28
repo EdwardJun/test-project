@@ -1,5 +1,7 @@
 # test-project
 
+> 通过 vue-cli 构建的项目
+
 > A Vue.js project
 
 ## Build Setup
