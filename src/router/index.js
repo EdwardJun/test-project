@@ -144,6 +144,14 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/cssLayout.vue'], resolve)
     }
+  },
+  {
+    path: '/slotOne',
+    name: 'slotOne',
+    meta: {title: 'slotOne'},
+    component (resolve) {
+      require(['../page/slotOne.vue'], resolve)
+    }
   }
 ]
 

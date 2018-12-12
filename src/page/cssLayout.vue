@@ -27,6 +27,7 @@
           </ul>
         </template>
       </slotTest>
+      <router-link to="/slotOne" tag="button">跳转slot</router-link>
       <button @click="callBackTest()">改变pushState</button>
     </div>
     <div id="footer">footer</div>

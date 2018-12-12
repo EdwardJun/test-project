@@ -1,0 +1,30 @@
+@import "../sass/mixin.scss";
+
+#slotTest1-page {
+  width: 100%;
+  .confirm-wrap {
+    margin: 0 auto;
+    width: px2rem(500px);
+    min-height: px2rem(250px);
+    border: 1px solid #ccc;
+    .header {
+      width: 100%;
+      height: px2rem(150px);
+      line-height: px2rem(150px);
+      background-color: #f3bdcf;
+    }
+    .bottom {
+      display: flex;
+      width: 100%;
+      height: px2rem(100px);
+      line-height: px2rem(100px);
+      .left {
+        flex: 1;
+      }
+      .right {
+        flex: 1;
+        border-left: 1px solid #ccc;
+      }
+    }
+  }
+}
