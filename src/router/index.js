@@ -152,6 +152,14 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/slotOne.vue'], resolve)
     }
+  },
+  {
+    path: '/launchTree',
+    name: 'launchTree',
+    meta: {title: 'launchTree'},
+    component (resolve) {
+      require(['../page/launch_tree.vue'], resolve)
+    }
   }
 ]
 

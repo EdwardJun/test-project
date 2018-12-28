@@ -4,26 +4,75 @@
     <slotTest1 :buttonNameArray="buttonNameArray">
       <template>
         <p slot="headerSlot">是否确认支付</p>
-        <span slot="bottomSlot" class="left">取消</span>
-        <span slot="bottomSlot" class="right">确认</span>
       </template>
     </slotTest1>
+    <!-- <treeMenu></treeMenu> -->
+    <div>
+      <treeMenu :treeData="testdata"></treeMenu>
+    </div>
+    <router-link to="/launchTree">跳转到treeMenu</router-link>
   </div>
 </template>
 <script>
   import Global from '../libs/global'
   import SlotTest1 from '../components/slotTest1.vue'
+  import treeMenu from '../components/treeMenu.vue'
 
   export default {
     name: 'slotOne',
     data () {
       return {
         global: Global.data,
-        buttonNameArray: ['取消', '确认']
+        buttonNameArray: ['取消', '确认'],
+        testdata:[
+          {
+            name:"一级菜单",
+            children:[
+              {
+                name:'二级菜单',
+                children:[
+                  {
+                      name:'三级菜单'
+                  },
+                  {
+                      name:'三级菜单'
+                  }
+                ]
+              },
+              {
+                name:'二级菜单',
+                children:[
+                  {
+                    name:'三级菜单',
+                    children:[
+                      {
+                        name:'四级菜单'
+                      },
+                      {
+                        name:'四级菜单'
+                      },
+                      {
+                        name:'四级菜单'
+                      }
+                    ]
+                  },
+                  {
+                    name:'三级菜单',
+                    children:[
+                      {
+                        name:'四级菜单',
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     components: {
-      SlotTest1
+      SlotTest1, treeMenu
     },
     created () {
     },
