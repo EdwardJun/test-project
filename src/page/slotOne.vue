@@ -6,17 +6,13 @@
         <p slot="headerSlot">是否确认支付</p>
       </template>
     </slotTest1>
-    <!-- <treeMenu></treeMenu> -->
-    <div>
-      <treeMenu :treeData="testdata"></treeMenu>
-    </div>
     <router-link to="/launchTree">跳转到treeMenu</router-link>
   </div>
 </template>
 <script>
   import Global from '../libs/global'
   import SlotTest1 from '../components/slotTest1.vue'
-  import treeMenu from '../components/treeMenu.vue'
+  /* import treeMenu from '../components/treeMenu.vue' */
 
   export default {
     name: 'slotOne',
@@ -72,7 +68,7 @@
       }
     },
     components: {
-      SlotTest1, treeMenu
+      SlotTest1
     },
     created () {
     },

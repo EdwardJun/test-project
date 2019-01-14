@@ -4,10 +4,10 @@
   width: 100%;
   .confirm-wrap {
     margin: 0 auto;
-    width: px2rem(500px);
+    width: px2rem(300px);
     min-height: px2rem(250px);
     border: 1px solid #ccc;
-    .header {
+    /* .header {
       width: 100%;
       height: px2rem(150px);
       line-height: px2rem(150px);
@@ -25,6 +25,6 @@
         flex: 1;
         border-left: 1px solid #ccc;
       }
-    }
+    } */
   }
 }
