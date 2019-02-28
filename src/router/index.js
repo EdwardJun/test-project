@@ -160,6 +160,14 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/launch_tree.vue'], resolve)
     }
+  },
+  {
+    path: '/indexDB',
+    name: 'indexDB',
+    meta: {title: 'indexDB'},
+    component (resolve) {
+      require(['../page/indexDB.vue'], resolve)
+    }
   }
 ]
 

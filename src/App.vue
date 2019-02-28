@@ -26,6 +26,7 @@ export default {
       g.resizeWin()
     })
     g.resizeWin()
+    g.initIDB()
   }
 }
 </script>

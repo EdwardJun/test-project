@@ -14,6 +14,7 @@
       <tree-item :treeData="checkedTreeData" :originalTreeData="checkedTreeData"></tree-item>
     </div>
     <!-- <div>选中的id为{{checkedTreeData}}</div> -->
+    <router-link to="/indexDB" tag="button">跳转到indexDB</router-link>
   </div>
 </template>
 

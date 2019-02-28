@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import idb from './idb.js'
 const wx = require('weixin-js-sdk')
 const win = window
 
@@ -26,5 +27,10 @@ export default {
     that.winScale = data.winWidth / that.baseWidth
     htmlEl.style.fontSize = that.winScale * 16 + 'px'
     // htmlEl.style.fontSize = document.documentElement.clientWidth / 100 + 'px';
+  },
+  initIDB () {
+    idb.openDB('15818976943', 't', () => {
+      console.log('创建完数据库------')
+    })
   }
 }

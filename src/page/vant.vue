@@ -175,8 +175,8 @@
       imagePriviewInit () {
         const imageInstance = ImagePreview({
           images: [
-            'http://sdcm168.stonebean.com:8489/s/group00/M00/0D/77/oIYBAFrMZEKAYQhOACL6iUIbvs8269.png?st=gvAaq2P0nMS5gmEEPuR-_Q&e=1543030034',
-            'https://img.yzcdn.cn/2.jpg'
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP_enax4p2VNm5nInh26864ZRFJU0ZQ2HRIOetXLBd6XuDAAJm3g',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmubfELEWL2KHv9uKjPVdm5p7FmMim1RqaX5DQHx5c6SS4XkirUQ'
           ],
           startPosition: 0,
           onClose() {
