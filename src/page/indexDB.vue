@@ -11,6 +11,7 @@
       <!-- <textarea type="text" class="chatInput"/> -->
       <div class="chatInput" contenteditable="true"></div>
     </div>
+    <router-link to="/slideToTab" tag="button">跳转到slideToTab</router-link>
   </div>
 </template>
 

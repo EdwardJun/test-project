@@ -21,9 +21,10 @@ export default {
     }
     data.winWidth = htmlEl.clientWidth || win.innerWidth || doc.body.clientWidth
     data.winHeight = htmlEl.clientHeight || win.innerHeight
+    console.log('data.winHeight', data.winHeight)
     data.winWidth = data.winWidth > 540 ? 540 : (data.winWidth < 320 ? 320 : data.winWidth)
-    console.log('data.winWidth', data.winWidth)
-    console.log('that.baseWidth', that.baseWidth)
+    // console.log('data.winWidth', data.winWidth)
+    // console.log('that.baseWidth', that.baseWidth)
     that.winScale = data.winWidth / that.baseWidth
     htmlEl.style.fontSize = that.winScale * 16 + 'px'
     // htmlEl.style.fontSize = document.documentElement.clientWidth / 100 + 'px';

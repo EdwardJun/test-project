@@ -9,7 +9,7 @@ export default {
     let that = this
     let request = indexedDB.open(DBName + '-' + category + userId, DBVersion)
     request.onsuccess = function (e) {
-      console.log('success------------')
+      // console.log('success------------')
       that.db = e.target.result
       callBack && callBack()
     }

@@ -168,6 +168,14 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/indexDB.vue'], resolve)
     }
+  },
+  {
+    path: '/slideToTab',
+    name: 'slideToTab',
+    meta: {title: 'slideToTab'},
+    component (resolve) {
+      require(['../page/slideToTab.vue'], resolve)
+    }
   }
 ]
 
