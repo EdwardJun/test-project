@@ -176,7 +176,15 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/slideToTab.vue'], resolve)
     }
-  }
+  },
+  {
+    path: '/cssPosition',
+    name: 'cssPosition',
+    meta: {title: 'cssPosition'},
+    component (resolve) {
+      require(['../page/cssPosition.vue'], resolve)
+    }
+  },
 ]
 
 let router = new Router({

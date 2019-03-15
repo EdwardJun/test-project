@@ -5,7 +5,7 @@
     </div>
     <div class="content-wrap" :style="{height: contentHeight + 'px'}" ref="contentWrap">
       <div class="content">
-        <div class="title">单项次卡</div>
+        <router-link to="/cssPosition" tag="div" class="title">单项次卡</router-link>
         <div class="item">
           <div>111111111111111111111</div>
           <div>111111111111111111111</div>
@@ -78,7 +78,8 @@ import Global from '../libs/global'
         contentHeight: '',
         tabItemList: ['单项次卡', '超值套餐', '积分礼品'],
         tabItemActiveIndex: 0,
-        contentOffsetTopList: [] // 每个content元素的 offsetTop 的值
+        contentOffsetTopList: [], // 每个content元素的 offsetTop 的值
+        isScrollOver: true // 是否滚动结束
       }
     },
     mounted () {
@@ -132,8 +133,19 @@ import Global from '../libs/global'
           destPos = el.scrollHeight - el.offsetHeight
         }
         // el.scrollTop = destPos
-        // that.scrollToTab(destPos)
-        let timer = ''
+        if (that.isScrollOver) {
+          that.isScrollOver = false
+          that.scrollToTab(destPos)
+        } else {
+          that.isScrollOver = true
+          setTimeout(() => {
+            that.isScrollOver = false
+            that.scrollToTab(destPos)
+          }, 30)
+        }
+        
+
+        /* let timer = ''
         timer = requestAnimationFrame(function fn() {
           let el = that.$refs.contentWrap
           let acceleration = 0.1
@@ -149,28 +161,8 @@ import Global from '../libs/global'
           } else {
             cancelAnimationFrame(timer)
           }
-        })
+        }) */
       },
-      /* scrollToTab (y, acceleration, stime) {
-        let that = this
-        let el = that.$refs.contentWrap
-        acceleration = acceleration || 0.1
-        stime = stime || 10
-        let y2 = el.scrollTop || 0
-        let deltY = y - y2
-        let speeding = 1 + acceleration
-
-        // console.log("目标位置：", y, "当前位置：", y2, "滚动位置：", y2 + (deltY - Math.floor(deltY / speeding)))
-        // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
-        speeding = deltY / speeding
-        el.scrollTop = y2 + (deltY - (speeding > 0 ? Math.floor(speeding) : Math.ceil(speeding)))
-
-        if (Math.abs(deltY) > 0) {
-          setTimeout(function () {
-            that.scrollToTab(y)
-          }, stime)
-        }
-      } */
       scrollToTab (y, acceleration, stime) {
         let that = this
         let el = that.$refs.contentWrap
@@ -185,13 +177,33 @@ import Global from '../libs/global'
         speeding = deltY / speeding
         el.scrollTop = y2 + (deltY - (speeding > 0 ? Math.floor(speeding) : Math.ceil(speeding)))
 
-        if (Math.abs(deltY) > 0) {
-          /* setTimeout(function () {
+        if (Math.abs(deltY) > 0 && !that.isScrollOver) {
+          setTimeout(function () {
             that.scrollToTab(y)
-          }, stime) */
-          window.requestAnimationFrame(that.scrollToTab(y))
+          }, stime)
         }
       }
+      // scrollToTab (y, acceleration, stime) {
+      //   let that = this
+      //   let el = that.$refs.contentWrap
+      //   acceleration = acceleration || 0.1
+      //   stime = stime || 10
+      //   let y2 = el.scrollTop || 0
+      //   let deltY = y - y2
+      //   let speeding = 1 + acceleration
+
+      //   // console.log("目标位置：", y, "当前位置：", y2, "滚动位置：", y2 + (deltY - Math.floor(deltY / speeding)))
+      //   // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
+      //   speeding = deltY / speeding
+      //   el.scrollTop = y2 + (deltY - (speeding > 0 ? Math.floor(speeding) : Math.ceil(speeding)))
+
+      //   if (Math.abs(deltY) > 0) {
+      //     /* setTimeout(function () {
+      //       that.scrollToTab(y)
+      //     }, stime) */
+      //     window.requestAnimationFrame(that.scrollToTab(y))
+      //   }
+      // }
     }
   }
 </script>
