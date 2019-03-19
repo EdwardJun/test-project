@@ -185,6 +185,14 @@ let pageRouterOption = [
       require(['../page/cssPosition.vue'], resolve)
     }
   },
+  {
+    path: '/debounce',
+    name: 'debounce',
+    meta: {title: 'debounce'},
+    component (resolve) {
+      require(['../page/debounce.vue'], resolve)
+    }
+  }
 ]
 
 let router = new Router({

@@ -1,6 +1,6 @@
 <template>
   <div class="cssPosition-page">
-    <div class="top">top</div>
+    <router-link to="/debounce" class="top" tag="div">top</router-link>
     <!-- <div class="top1">
       <ul>
         <li>1111111</li>
