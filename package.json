@@ -11,6 +11,8 @@
     "analyz": "cross-env NODR_ENV=production npm_config_report=true npm run build"
   },
   "dependencies": {
+    "file-saver": "^2.0.1",
+    "jszip": "^3.2.0",
     "vant": "^1.4.2",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^3.1.3",
