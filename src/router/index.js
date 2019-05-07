@@ -192,6 +192,14 @@ let pageRouterOption = [
     component (resolve) {
       require(['../page/debounce.vue'], resolve)
     }
+  },
+  {
+    path: '/listTest',
+    name: 'listTest',
+    meta: {title: 'listTest'},
+    component (resolve) {
+      require(['../page/listTest.vue'], resolve)
+    }
   }
 ]
 

@@ -1,6 +1,10 @@
 <template>
   <div class="debounce-page">
+    <router-link to="/listTest" tag="button">跳转listTest</router-link>
     <input type="text" class="inputTest" id="debounce" v-model="textValue" @input="doEnter">
+    <div>
+      <button @click="setTestValue">修改testValue</button>
+    </div>
     <canvas id="myCanvas" width="400" height="200"></canvas>
     <div class="img-wrap" ref="imgWrap" @scroll="doScroll">
       <!-- <div><a href="http://note.youdao.com/yws/res/6879/WEBRESOURCE70ab961814dbc86c099e273192bbff13" download="1111">下载文件链接</a></div>
@@ -57,6 +61,8 @@ import JsZip from 'jszip'
           debounceAjax(e.target.value)
         })
       }) */
+
+      this.setTestValue()
     },
     methods: {
       setLoadingHide () {
@@ -203,6 +209,11 @@ import JsZip from 'jszip'
           console.log('blob', blob)
           FileSaver.saveAs(blob, '技师工牌.zip')
         })
+      },
+      setTestValue () {
+        let that = this
+        let store = that.$store
+        store.commit('setTestValue', 5)
       }
     }
   }

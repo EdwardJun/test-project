@@ -15,7 +15,8 @@ export default new Vuex.Store({
     currPageObj: null, // 当前页面对象
     lastPageObj: null, // 上一个页面对象
     toolTipActive: false, // 提示框状态
-    toolTipTextActive: false // 提示文本框的状态
+    toolTipTextActive: false, // 提示文本框的状态
+    testValue: ''
   },
   getters: {
     getCurrPageName (state) {
@@ -54,6 +55,9 @@ export default new Vuex.Store({
         state.toolTipActive = false
         state.toolTipTextActive = false
       }, 2000)
+    },
+    setTestValue (state, value) {
+      state.testValue = value
     }
   },
   actions: {
